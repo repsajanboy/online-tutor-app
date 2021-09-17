@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "justlearn-english-chattin-hntx",
+  "private_key_id": "4720cad833fe4881e22ee4caa2490fe412018362",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCQNZjAg9t6//rk\n6jsbHiDqJRuzUAUOVnhSJORdP+2d9we2OtCdMB6y/yS7CFDLDcYSStJK9/spllNs\nGL+TFcrDj/h3cMPJBxB6phCq3YedqGi8LHwnZM18E5BYb/hrNm2oLyCFiaXJWpGj\nxxu8U9DbsMZtDJSba23uLWan4sxjDB9SRwY1gs3bqgbkT0v1joKfLiNFSsfNe20m\ndTWs1+QAYnqKjNCYZNWYhtrx1KBk5V7LZemSsXBj61N28b2/F2WmPyCSPSH8zRKr\nmpUBt2tiIPht9kRf+aDPnAilsHwrtySSRSEZEHEQTtMlaXlkaMCSKW8O2LnK53Vt\nGUucGNnPAgMBAAECggEACcBOCWqBG1KW1QbPo1hIsnx64IefJ+aJ8UgEVxfdCerr\nzxMwCwj3cnQVOD5qNCjExXTgvmgBSEEdd/g+cAQvt0STcQQjgQLkxt5Wzy72nh8G\nof7CEGndCTBLeOdtXVaLWK2DHfR+TNy+b1wl0Hi8bTaJXFNW8yFzCAFy6RRJbMMJ\njqYm3Fr8ya1EMvhs3Wkshomyk5xO/x2bbUhFijboSdo+W3lYjCyz6RLUDlEzg1y4\n8DVxkWLQAfLn49xiB0kGDqlyxtxDqWCqa8LqybTyxQ8WqN972WolFZOahvUdNUWy\nNNc1n7IHiNlS4QhaVEf/o+afYSFoSirsRdtl+S6DTQKBgQDLM3yWwlfg/CWJ8P/r\n9jyei2LbK7P0oKjtx7iXKIvkMPR5qcQlA/lYMgEmYMUoKhjyWM6UYXkjb1PvFbC8\niPvzrQHCwouW0fOg+KWZb+ZRfJwQDLaZmvOya/dSzAdj6O+EMFEkJVAw3SF4K02s\nbtGUoKTlS8NBvS8HRSCICmt0FQKBgQC1rhoKGFX7tcbe+C8tv5lpZOqsDNQ58v2A\n6EWC54RSuLmUwJD6+yVw4LA3HU6P+AE8PnZNX9/r3FzTDGfNcPhUyjdN6D4fEyU/\nan78+k5QsHebwKUJmiFt0C3Yn4mZ/Gxwx4scpL55vn5VUvFZVBSXT8BermLiDdLc\n2lJBuvQbUwKBgF5/rTs3WkMJQDPsXjhQJVTeIbUnl+L2LFmYfiHd+2C925QQ/WTx\nei4n4x0D9+x712otHrUmt31hMrmHbs/fLLzgAmeeregP76s2t1yqC4Rt3O4h23GH\n/DlHuJdKx00RcQIarkGPEMIItJ38FX1RdCoYo1b3avDRmGNbJIvfvKUZAoGAF9c4\n44o9/kHkTu4SgtZZs1Li2KD2WIRib8ALHxpyasiC0dpTLBw41Y8mkJTv8kSBJP6t\nV4n1QGYyaB+An5zreXTvvPF09W71vFSlRV0zWbNOfsnQ3mmzaU2gNoT48ZQGRuZo\nguG7fQ5aVagEs8wsx45XmBUaNL/Lo9+iW63EyrECgYBBEAyyp/U51htlz/sCl1s3\nhgmtC7C+Ans4Qwe6nNhM7jUZKqaBRRhsPOaXyNKwQ+szmEHhdN9xu7N6duT4BjcW\nYV2lA/eV3M6fjhY6poop5bTQvSuOrr22uXGGuEPDPViT9WdK1xd45inLxqi0MPrm\njw7Vo9w8wI98ZBZzKewyxA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "english-chatting-bot@justlearn-english-chattin-hntx.iam.gserviceaccount.com",
+  "client_id": "113131735788153906189",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/english-chatting-bot%40justlearn-english-chattin-hntx.iam.gserviceaccount.com"
+}

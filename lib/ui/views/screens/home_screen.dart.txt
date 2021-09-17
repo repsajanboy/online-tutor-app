@@ -1,0 +1,222 @@
+import 'package:flutter/material.dart';
+import 'package:justlearn/business_logic/models/tutors/tutors_model.dart';
+import 'package:justlearn/services/action_buttons/action_buttons.dart';
+import 'package:justlearn/services/calendar/calendar_provider.dart';
+import 'package:justlearn/services/dashboardDetails.dart/dash_details_provider.dart';
+import 'package:justlearn/services/lessons/lessons_list_api.dart';
+import 'package:justlearn/services/tutors/tutors_list_api.dart';
+import 'package:justlearn/ui/views/screens/tutor/tutor_profile.dart';
+import 'package:provider/provider.dart';
+
+class HomeScreen extends StatefulWidget {
+  static const String id = 'home_screen';
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  ScrollController _controller = new ScrollController();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _afterLayout(context));
+    _controller.addListener(() {
+      if (_controller.position.pixels == _controller.position.maxScrollExtent) {
+        final tutorState = Provider.of<TutorsListApi>(context, listen: false);
+        //tutorState.getTutorsList(tutorState.page);
+      }
+    });
+  }
+
+  _afterLayout(BuildContext context) async {
+    final tutorState = Provider.of<TutorsListApi>(context, listen: false);
+    //tutorState.getTutorsList(tutorState.page);
+    final lessonState = Provider.of<LessonListApi>(context, listen: false);
+    await lessonState.loadParamsAsync;
+    await lessonState.setListNull();
+    // await lessonState.getLessonsList(lessonState.page);
+    final dashProvider =
+        Provider.of<DashDetailsProvider>(context, listen: false);
+    await dashProvider.loadParamsAsync;
+    await dashProvider.loadDashDetails();
+    await dashProvider.checkIfStripe;
+    final actionState =
+        Provider.of<ActionButtonsProvider>(context, listen: false);
+    await actionState.loadParamsAsync;
+    final calendarState = Provider.of<CalendarProvider>(context, listen: false);
+    await calendarState.loadParamsAsync;
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("Tutors List Build");
+    final tutorsList = Provider.of<TutorsListApi>(context, listen: false);
+    return Scaffold(
+      body: SafeArea(
+        child: ListView(
+          controller: _controller,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Find Native Tutor and Online Teacher',
+                    style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'WorkSans',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+            tutorsList.isFetching
+                ? Center(child: CircularProgressIndicator())
+                : Consumer<TutorsListApi>(
+                    builder: (context, list, child) => ListView.builder(
+                      primary: false,
+                      shrinkWrap: true,
+                      itemCount: list.tutors.length + 1,
+                      itemBuilder: (context, index) {
+                        if (index == list.tutors.length) {
+                          return _buildProgressIndicator();
+                        } else {
+                          Tutors tutorRes = list.tutors[index];
+                          return _tutorList(tutorRes);
+                        }
+                      },
+                    ),
+                  ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProgressIndicator() {
+    final tutorState = Provider.of<TutorsListApi>(context, listen: false);
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Opacity(
+          opacity: tutorState.isFetching ? 1.0 : 0.0,
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+
+  Widget _tutorList(Tutors tutorsL) {
+    return InkWell(
+      child: Container(
+        padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 5.0),
+        margin: const EdgeInsets.fromLTRB(13, 5, 13, 5),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(1, 1),
+              spreadRadius: 2,
+              blurRadius: 1,
+              color: Colors.grey[100],
+            ),
+          ],
+        ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                    '${tutorsL.profile.imageRelativePath}${tutorsL.profile.profileImage}'),
+                maxRadius: 40,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * .5,
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      '${tutorsL.profile.firstName} ${tutorsL.profile.lastName}',
+                      style: TextStyle(
+                          color: Color(0xFF3061cc),
+                          fontSize: 16,
+                          fontFamily: 'WorkSans',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      '${tutorsL.countryFrom}',
+                      style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 14,
+                          fontFamily: 'WorkSans',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          RaisedButton(
+            color: Colors.orange,
+            child: Text(
+              'Book Lesson & Time',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+                fontFamily: 'WorkSans',
+              ),
+            ),
+            shape: RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(5.0)),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TutorProfile(
+                  tutor: tutorsL,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Text(
+              '${tutorsL.profile.subjectNames}',
+              style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 16,
+                  fontFamily: 'WorkSans',
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Text(
+              '${tutorsL.profile.shortIntroduction}',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 3,
+            ),
+          )
+        ]),
+      ),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TutorProfile(
+            tutor: tutorsL,
+          ),
+        ),
+      ),
+    );
+  }
+}

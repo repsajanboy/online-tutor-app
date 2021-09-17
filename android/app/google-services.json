@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "196010083038",
+    "firebase_url": "https://justlearn-97fc0.firebaseio.com",
+    "project_id": "justlearn-97fc0",
+    "storage_bucket": "justlearn-97fc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196010083038:android:0a0df57c0c35d01f",
+        "android_client_info": {
+          "package_name": "com.justlearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196010083038-1kiqdnu0n316ho9ajv20q0nad80e40tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.justlearn",
+            "certificate_hash": "3f462f55bb43042fd8a4cdf8f57a53226f0dcee4"
+          }
+        },
+        {
+          "client_id": "196010083038-ar3emqbeu9tf4m8sjd300g2r1t4d4od6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.justlearn",
+            "certificate_hash": "3f326b4e888590eb09c0ffc4705e8bd9b946a2fa"
+          }
+        },
+        {
+          "client_id": "196010083038-k2it4ps5v4ki8ae1k848jn47jsorvgda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPwfEkK9byBM7TYGh7Y5Wm9uiZXZBNniU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196010083038-db0364lqc2jhbnde75a9j9i368n8bom4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "196010083038-hkrfplpl4tl9pl8fem5p991u8h0sda0a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.justlearn",
+                "app_store_id": "1443829206"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>196010083038-hkrfplpl4tl9pl8fem5p991u8h0sda0a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.196010083038-hkrfplpl4tl9pl8fem5p991u8h0sda0a</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>196010083038-2dmhqfmf0kehs6vg4r3t7c0oqpflapk2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAEbiNKJ32EmNuvrjeWD2bEP61mpKJsYi0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>196010083038</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.justlearn</string>
+	<key>PROJECT_ID</key>
+	<string>justlearn-97fc0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>justlearn-97fc0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:196010083038:ios:0a0df57c0c35d01f</string>
+	<key>DATABASE_URL</key>
+	<string>https://justlearn-97fc0.firebaseio.com</string>
+</dict>
+</plist>
